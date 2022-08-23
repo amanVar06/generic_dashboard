@@ -11,6 +11,14 @@ const initialState = {
 
 export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
+  const [isClicked, setIsClicked] = useState(initialState);
+
+  const handleClick = (clicked) => {
+    setIsClicked({
+      ...initialState,
+      [clicked]: true,
+    });
+  };
 
   return (
     // whatever values we passed here they will pass to all the components
@@ -20,6 +28,9 @@ export const ContextProvider = ({ children }) => {
         // activeMenu: activeMenu
         activeMenu,
         setActiveMenu,
+        isClicked,
+        setIsClicked,
+        handleClick,
       }}
     >
       {children}
