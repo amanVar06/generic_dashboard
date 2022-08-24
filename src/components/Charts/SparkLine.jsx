@@ -17,7 +17,7 @@ const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
       border={{ color: currentColor, width: 2 }}
       dataSource={data}
       xName="xval"
-      //change here x to xval and y to yval
+      //changed here x to xval and y to yval
       yName="yval"
       type={type}
       tooltipSettings={{
