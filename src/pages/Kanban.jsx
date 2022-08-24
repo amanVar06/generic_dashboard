@@ -3,7 +3,6 @@ import React from "react";
 import {
   KanbanComponent,
   ColumnDirective,
-  ColumnsDirTypecast,
   ColumnsDirective,
 } from "@syncfusion/ej2-react-kanban";
 
@@ -19,7 +18,7 @@ const Kanban = () => {
         dataSource={kanbanData}
         cardSettings={{ contentField: "Summary", headerField: "Id" }}
         keyField="Status"
-        // keyField is a most crucial thing without this we cant display items
+        // keyField is a most crucial thing without this we cant display items that is categorised all the different items
       >
         <ColumnsDirective>
           {kanbanGrid.map((item, index) => (
