@@ -22,6 +22,7 @@ const Stacked = ({ height, width }) => {
     <ChartComponent
       width={width}
       height={height}
+      //Think why changing just id to "charts" changed tooltip and orientation of chart
       id="charts"
       primaryXAxis={stackedPrimaryXAxis}
       primaryYAxis={stackedPrimaryYAxis}
