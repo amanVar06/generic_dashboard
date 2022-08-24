@@ -13,6 +13,24 @@ export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined);
+  const [currentColor, setCurrentColor] = useState("#03c9d7");
+  const [currentMode, setCurrentMode] = useState("Light");
+  const [themeSettings, setThemeSettings] = useState(false);
+
+  const setMode = (e) => {
+    setCurrentMode(e.target.value);
+
+    //store the theme set by the user to local storage
+    //so that when user comes back again theme wont get changed
+    localStorage.setItem("themeMode", e.target.value);
+
+    setThemeSettings(false);
+  };
+
+  const setColor = (color) => {
+    setCurrentColor(color);
+    localStorage.setItem("colorMode", color);
+  };
 
   const handleClick = (clicked) => {
     setIsClicked({
@@ -34,6 +52,12 @@ export const ContextProvider = ({ children }) => {
         handleClick,
         screenSize,
         setScreenSize,
+        currentColor,
+        currentMode,
+        setMode,
+        setColor,
+        themeSettings,
+        setThemeSettings,
       }}
     >
       {children}

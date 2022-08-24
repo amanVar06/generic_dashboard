@@ -36,6 +36,7 @@ const Navbar = () => {
     handleClick,
     screenSize,
     setScreenSize,
+    currentColor,
   } = useStateContext();
 
   useEffect(() => {
@@ -60,7 +61,7 @@ const Navbar = () => {
       <NavButton
         title="Menu"
         customFunc={() => setActiveMenu((prevMenuState) => !prevMenuState)}
-        color="blue"
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
 
@@ -68,7 +69,7 @@ const Navbar = () => {
         <NavButton
           title="Cart"
           customFunc={() => handleClick("cart")}
-          color="blue"
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
 
@@ -79,7 +80,7 @@ const Navbar = () => {
           // keep cart chat notification in small case
           // because we defined initial state in context Provider
           // whose key name is same in small case
-          color="blue"
+          color={currentColor}
           icon={<BsChatLeft />}
         />
 
@@ -87,7 +88,7 @@ const Navbar = () => {
           title="Notifications"
           dotColor="#03c9d7"
           customFunc={() => handleClick("notification")}
-          color="blue"
+          color={currentColor}
           icon={<RiNotification3Line />}
         />
 
