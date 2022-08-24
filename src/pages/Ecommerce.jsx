@@ -103,15 +103,15 @@ const Ecommerce = () => {
               </div>
 
               <div className="mt-5">
-                {/* <SparkLine
+                <SparkLine
                   currentColor="blue"
                   id="line-sparkline"
-                  type="line"
+                  type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
                   color="blue"
-                /> */}
+                />
               </div>
             </div>
           </div>
