@@ -20,6 +20,7 @@ const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
       //changed here x to xval and y to yval
       yName="yval"
       type={type}
+      markerSettings={{ visible: ["All"], size: 2.5, fill: currentColor }}
       tooltipSettings={{
         visible: true,
         format: "${xval} : data ${yval}",
